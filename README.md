@@ -5,7 +5,7 @@
 ## Getting Started
 
 This is an example of angular project, developed for interview purpose.
-The mini-project is an implémentation of the famous X/O game 
+The mini-project is an implémentation of the famous X/O game. 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -22,7 +22,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/RMADI-SOF/xo-pono
    ```
 2. Install NPM packages
    ```sh
