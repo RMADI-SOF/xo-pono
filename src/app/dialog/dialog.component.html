@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>X O</h2>
+<mat-dialog-content class="mat-typography">
+  <h3 *ngIf="winner == 'X'">Congrats  {{userName}}, you win !!! </h3>
+  <h3 *ngIf="winner == 'O'">You lost {{userName}}, It's not your day bro !!! </h3>
+  <h3 *ngIf="winner == 'N'">Null  !!! </h3>
+  <p>Let's give it another try ? </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Restart</button>
+</mat-dialog-actions>

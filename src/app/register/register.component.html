@@ -1,0 +1,40 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div  class="container center">
+    <div class="center field-container">
+      <label for="username">Username:</label>
+      <br>
+      <input type="text" placeholder="Enter Username" id="username" formControlName="username">
+    </div>
+
+    <div class="center field-container">
+      <label for="password">Password:</label>
+      <br>
+      <input type="password" placeholder="Enter Password" id="password" formControlName="password">
+    </div>
+
+    <div class="center field-container">
+      <label for="confirm-password">Confirm Password:</label>
+      <br>
+      <input type="password" placeholder="Re-enter Password" id="confirm-password" formControlName="confirmPassword">
+    </div>
+
+    <mat-error class="center" *ngIf="username?.invalid && username?.touched">
+      Username is required
+    </mat-error>
+    <mat-error class="center" *ngIf="password.invalid && password.touched">
+      Password is required 
+    </mat-error>
+    <mat-error class="center" *ngIf="confirmPassword.invalid && confirmPassword.touched">
+      Confirm Password is required
+    </mat-error>
+    <mat-error class="center" *ngIf="registrationForm.hasError('notSame')">
+        Passwords do not match
+    </mat-error>
+    <mat-error class="center" *ngIf="registrationForm.invalid">
+        Password should contain at least 6 caracters
+    </mat-error>
+    <hr>
+
+    <button class="center" mat-stroked-button color="primary" [disabled]="registrationForm.invalid">Register</button>
+  </div>
+</form>

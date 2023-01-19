@@ -1,0 +1,10 @@
+<header class="game-header">
+  <p>O always starts</p>
+  <p class="current">Current player: <span id="current"></span></p>
+</header>
+<button (click)="restart()" class="center" mat-stroked-button color="basic">Restart</button>
+<div class="board">
+  <ng-container *ngFor="let cell of cells; let i = index"> 
+      <div class="field" (click)="cellClicked(i)">{{cell}}</div>
+  </ng-container>
+</div>
