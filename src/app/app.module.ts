@@ -4,40 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
-import { MatButtonModule } from '@angular/material/button';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserService } from './services/user.service';
-import { BoardComponent } from './board/board.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
+import { HomeModule } from './modules/home/home.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    PageNotFoundComponent,
-    BoardComponent,
-    DialogComponent,
-    HomeComponent
   ],
   imports: [
+    HomeModule,
     FormsModule,
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatDialogModule,
+    SharedModule,
     BrowserAnimationsModule,
-    
-
+    CoreModule,
   ],schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

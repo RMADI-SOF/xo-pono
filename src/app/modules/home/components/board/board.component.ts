@@ -3,8 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { DialogComponent } from '../dialog/dialog.component';
 import { Board } from './board.model';
-import Utils from '../Utils/Utils';
-import { UserService } from '../services/user.service';
+import Utils from '../../../../shared/Utils/Utils';
+import { UserService } from '../../../../core/services/user.service';
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -23,7 +23,6 @@ export class BoardComponent implements OnInit {
 
   board: Board = new Board(); 
   cellsObs = new Subject<Board>();
-  arraySub = new Subject<string[]>(); 
   cells: string[];
   constructor(public dialog: MatDialog, private userService : UserService) {}
 

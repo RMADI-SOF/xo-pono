@@ -12,13 +12,13 @@ export class UserService {
     return this.connected;
   }
 
-  connect(username: String, password: String){
+  async connect(username: String, password: String): Promise<void>{
     this.username = username;
     this.password = password;
     this.connected = true;
   }
 
-  disconnect(){
+  async disconnect() : Promise<void>{
     this.username = "";
     this.password = "";
     this.connected = false;
