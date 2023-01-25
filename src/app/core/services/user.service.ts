@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
+import { LocalService } from './local.service';
 
 @Injectable()
 export class UserService {
 
-  private username: String;
-  private password: String;
+  private username: string;
+  private password: string;
   private connected : boolean = false;
-  constructor() { }
+  constructor(private local: LocalService) { }
 
   isConnected() : boolean {
     return this.connected;
   }
 
-  async connect(username: String, password: String): Promise<void>{
-    this.username = username;
-    this.password = password;
+  async connect(username: string, password: string): Promise<void>{
+    this.local.saveData('username', username);
+    this.local.saveData('password', password);
     this.connected = true;
   }
 
   async disconnect() : Promise<void>{
-    this.username = "";
-    this.password = "";
+    await this.local.removeData("username");
+    await this.local.removeData("password");
     this.connected = false;
   }
 

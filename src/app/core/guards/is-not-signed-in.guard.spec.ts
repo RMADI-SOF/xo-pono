@@ -12,7 +12,6 @@ describe('IsNotSignedInGuard', () => {
         { provide: UserService, useValue: {} },
         { provide: Router, useValue: {}}
       ]
-
     });
     guard = TestBed.inject(IsSignedInGuard);
   });

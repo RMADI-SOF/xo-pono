@@ -60,7 +60,7 @@ export class BoardComponent implements OnInit {
     this.board.cells[randomIndex] = 'O';
   }
 
-  getValuePositions(value: string, arr: String[]){
+  getValuePositions(value: string, arr: string[]){
     let positions = [];
     arr.forEach((vi , i) => {
       if(vi == value)

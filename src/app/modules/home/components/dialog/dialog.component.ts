@@ -8,7 +8,7 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 })
 export class DialogComponent implements OnInit {
   winner: string;
-  userName: String = 'toto';
+  userName: string = 'toto';
   constructor() {}
   ngOnInit(): void {
   }
