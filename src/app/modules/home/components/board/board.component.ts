@@ -71,10 +71,10 @@ export class BoardComponent implements OnInit {
 
   get winner() {
     let xpos = this.getValuePositions('X', this.board.cells).join('');
-    if(this.isWinner(xpos)) 
+    if(this.hasWinner(xpos)) 
       return 'X';
     let opos = this.getValuePositions('O', this.board.cells).join('');
-    if(this.isWinner(opos))
+    if(this.hasWinner(opos))
       return 'O';
     if(!this.board.cells.includes(''))
       return 'N';
@@ -86,7 +86,7 @@ export class BoardComponent implements OnInit {
     return arr[randomIndex];
   }
 
-  isWinner(pos : string) : boolean {
+  hasWinner(pos : string) : boolean {
     return pos.length < 3 ? false : 
            this.winCompositions.find(win => Utils.containsAllElement([...win], pos)) != undefined;
   }
