@@ -13,7 +13,6 @@ export class IsSignedInGuard implements CanActivate, CanDeactivate<any> {
   }
   canDeactivate(component: any, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     console.log("can desactivate");
-    
     return this.userService.isConnected();
   }
 

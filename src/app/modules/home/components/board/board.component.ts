@@ -32,13 +32,13 @@ export class BoardComponent implements OnInit {
     dialogRef.componentInstance.userName = this.userService.getUsername; 
     dialogRef.afterClosed().subscribe(restart => {
       if(restart)
-        this.restart()
+        this.restart();
     });
   }
 
   ngOnInit(): void {
     this.cellsObs.subscribe(value => {
-      this.playRandom()
+      this.playRandom();
       if(this.winner){
         this.openDialog(this.winner);
       }
@@ -55,7 +55,7 @@ export class BoardComponent implements OnInit {
   }
 
   playRandom(): void{
-     const emptyCellsIndexes = this.getValuePositions('', this.board.cells);
+    const emptyCellsIndexes = this.getValuePositions('', this.board.cells);
     const randomIndex = this.getRandomItem(emptyCellsIndexes);
     this.board.cells[randomIndex] = 'O';
   }
@@ -64,7 +64,7 @@ export class BoardComponent implements OnInit {
     let positions = [];
     arr.forEach((vi , i) => {
       if(vi == value)
-        positions.push(i)
+        positions.push(i);
     })
     return positions;
   }
@@ -72,7 +72,7 @@ export class BoardComponent implements OnInit {
   get winner() {
     let xpos = this.getValuePositions('X', this.board.cells).join('');
     if(this.isWinner(xpos)) 
-      return 'X' 
+      return 'X';
     let opos = this.getValuePositions('O', this.board.cells).join('');
     if(this.isWinner(opos))
       return 'O';
@@ -92,7 +92,7 @@ export class BoardComponent implements OnInit {
   }
 
   containsAllElement(searched: string[], container: string){
-    return searched.every(r => container.includes(r))
+    return searched.every(r => container.includes(r));
   }
 
   restart(): void {

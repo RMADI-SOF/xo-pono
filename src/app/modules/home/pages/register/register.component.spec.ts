@@ -18,7 +18,6 @@ describe('RegisterComponent', () => {
       providers: [
         { provide: UserService, useValue: {} },
         { provide: Router, useValue: {} },
-
       ]
 
     })
