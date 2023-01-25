@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
 
 import { HomeComponent } from './home.component';
 
@@ -8,7 +10,12 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+      providers: [
+        { provide: UserService, useValue: {} },
+        { provide: Router, useValue: {}}
+
+      ]
     })
     .compileComponents();
   });

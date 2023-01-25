@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UserService } from 'src/app/core/services/user.service';
 
 import { BoardComponent } from './board.component';
 
@@ -8,7 +10,13 @@ describe('BoardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardComponent ]
+      declarations: [ BoardComponent ],
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: UserService, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} }
+      ]
+   
     })
     .compileComponents();
   });
